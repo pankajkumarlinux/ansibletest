@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: flask-app
+    meta.helm.sh/release-namespace: default
+  creationTimestamp: "2025-01-15T11:54:18Z"
+  labels:
+    app.kubernetes.io/instance: flask-app
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: flask-app
+    app.kubernetes.io/version: 1.16.0
+    helm.sh/chart: flask-app-0.1.0
+  name: flask-app
+  namespace: default
+  resourceVersion: "25140"
+  uid: dedf1705-6766-4a70-959c-78c6bc282230
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.101.78.69
+  clusterIPs:
+  - 10.101.78.69
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 32701
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app.kubernetes.io/instance: flask-app
+    app.kubernetes.io/name: flask-app
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
