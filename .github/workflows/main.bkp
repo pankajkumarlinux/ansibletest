@@ -1,0 +1,18 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - pankaj
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
