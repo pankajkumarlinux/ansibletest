@@ -42,6 +42,6 @@ jobs:
     # Step 6: Deploy with Helm
     - name: Deploy with Helm
       run: |
-        helm upgrade --install flask-app /home/ubuntu/ansibletest/app/flask-app \
+        helm upgrade --install flask-app /home/ubuntu/k8s/flash-app \
           --set image.repository=${{ secrets.DOCKER_USERNAME }}/python25 \
           --set image.tag=jan2
